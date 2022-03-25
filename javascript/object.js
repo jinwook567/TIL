@@ -159,3 +159,6 @@ const money3 = new Money3(1000);
 money3.won = 1200;
 console.log("money3", money3.dollar);
 console.log("monet3", money3.won);
+
+const person5 = new Map();
+person5.set("key", "value");
