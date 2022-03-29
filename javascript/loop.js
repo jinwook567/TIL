@@ -15,12 +15,12 @@ let i = 0;
 // } while (i < 10);
 //무조건 한번 실행
 
-// for (let k = 0; k < 10; k++) {
-//   if (k === 3) {
-//     break;
-//   }
-//   console.log("k", k);
-// }
+for (let k = 0; k < 10; k++) {
+  if (k === 3) {
+    break;
+  }
+  console.log("k", k);
+}
 
 console.log(null ?? 5);
 

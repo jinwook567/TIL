@@ -162,3 +162,10 @@ console.log("monet3", money3.won);
 
 const person5 = new Map();
 person5.set("key", "value");
+
+const obj10 = { a: 5, b: 10 };
+const obj11 = obj10;
+obj10.b = 15;
+console.log(obj11);
+//같은 주소값을 참조하고 있기 때문에 obj11의 b도 변경이 된다.
+//객체 자체를 변경했을 경우는 주소값도 바뀌기 때문에 달라진다.
