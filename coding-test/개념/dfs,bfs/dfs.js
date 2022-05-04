@@ -9,6 +9,19 @@ const graph = [[], [2, 3, 8], [1, 7], [1, 4, 5], [3, 5], [3, 4], [7], [2, 6, 8],
 const visited = Array(graph.length).fill(false);
 
 function dfs(graph, v, visited) {
+  //v는 현재 node를 말함.
+  visited[v] = true;
+  //방문처리.
+  console.log(v);
+
+  graph[v].forEach((node) => {
+    if (!visited[node]) {
+      dfs(graph, node, visited);
+    }
+  });
+}
+
+function dfs2(graph, v, visited) {
   //v는 현재 node를 말한다.
   visited[v] = true;
   console.log(v);
@@ -37,7 +50,7 @@ const graph2 = [
 
 const visited2 = Array(5).fill(false);
 
-function dfs2(graph, v, visited) {
+function dfs3(graph, v, visited) {
   visited[v] = true;
   console.log(v);
   for (let i = 0; i < graph[v].length; i++) {
@@ -48,4 +61,6 @@ function dfs2(graph, v, visited) {
   }
 }
 
-dfs2(graph2, 0, visited2);
+dfs(graph, 1, visited);
+
+//dfs2(graph2, 0, visited2);
