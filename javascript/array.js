@@ -35,3 +35,13 @@ console.log(index, lastIndex);
 
 const startIndex = arr7.indexOf("c", 2);
 console.log(startIndex);
+
+const n = 6;
+const graph = Array.from(Array(n + 1), () => []);
+console.log(graph);
+const graph2 = Array.from(Array(n + 1));
+const graph3 = Array(n + 1)
+  .fill()
+  .map(() => []);
+console.log(graph3);
+console.log(graph2);

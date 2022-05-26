@@ -34,12 +34,32 @@ class ArrayQueue {
   }
 }
 
-const queue = new ArrayQueue();
-queue.enqueue(10);
-queue.enqueue(10);
-queue.enqueue(10);
-queue.dequeue();
-console.log(queue.peek());
-console.log(queue);
+class Queue {
+  constructor(data) {
+    this.queue = data;
+    this.front = 0;
+    this.rear = data.length;
+  }
 
-class ListQueue {}
+  enqueue(arr) {
+    this.queue = this.queue.concat(arr);
+    this.rear += arr.length;
+    //this.queue[this.rear++] = value;
+  }
+
+  dequeue(i) {
+    const value = this.queue.slice(0, i);
+    this.front += i;
+    return value;
+    // const value = this.queue[this.front];
+    // delete this.queue[this.front];
+    // this.front++;
+    // return value;
+  }
+}
+
+const queue = new Queue([2, 3, 4, 5, 6]);
+queue.enqueue([1, 2, 3]);
+console.log(queue);
+queue.dequeue(3);
+console.log(queue);

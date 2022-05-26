@@ -58,8 +58,6 @@ class BinarySearchTree {
         current = current.left;
       }
     }
-
-    //나는 지금 그냥 null이야.
   }
 
   has(value) {

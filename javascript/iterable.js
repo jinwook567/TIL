@@ -77,6 +77,7 @@ for (const number2 of range2) {
 
 // * iterator 명시적으로 호출하기.
 const iterator = range2[Symbol.iterator]();
+
 // next 메소드를 가진 객체를 리턴한다.
 let result = iterator.next();
 result = iterator.next();

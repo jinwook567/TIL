@@ -68,3 +68,32 @@ function solution4(food_times, k) {
     }
   }
 }
+
+//k를 빨리 줄일 수 있어야함.
+//최소힙을 사용하면 빠르게 줄일 수 있음.
+function solution(food_times, k) {
+  food_times = food_times.map((time, index) => ({ index: index + 1, time }));
+  const sortedTimes = food_times.sort((a, b) => a.time - b.time);
+  const len = sortedTimes.length;
+
+  //힙으로 문제를 풀어야함. 따라서 sort 하였음.
+  //queue의 길이를 알아야하므로, (루프)니까.
+  let queueLength = sortedTimes.length;
+  let sum = 0;
+
+  //각각의 sum을 빼주면서 나가야함.
+  for (let i = 0; i < len; i++) {
+    //가장 빨리 먹을 수 있는 순서부터.
+    const dequeueLength = len - queueLength;
+    const { time } = sortedTimes[i];
+    if ((time - sum) * queueLength <= k) {
+      k -= (time - sum) * queueLength;
+      queueLength -= 1;
+      sum += time - sum;
+    } else {
+      const arr = sortedTimes.slice(dequeueLength).sort((a, b) => a.index - b.index);
+      return arr[k % queueLength].index;
+    }
+  }
+  return -1;
+}
