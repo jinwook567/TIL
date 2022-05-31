@@ -36,6 +36,7 @@ function solution(n, weak, dist) {
       }
     }
   }
+  return -1;
 
   //we only need weak array..
   //만족하는 상황 나오면 i 리턴하고 끝내기.
@@ -60,6 +61,3 @@ function getPermutation(array, n) {
   permutation(array, n, []);
   return permutationResults;
 }
-
-const r = solution(12, [1, 3, 4, 9, 10], [3, 5, 7]);
-console.log(r);
