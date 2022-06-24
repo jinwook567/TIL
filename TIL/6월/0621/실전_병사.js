@@ -78,5 +78,3 @@ console.log(arr2);
 const r2 = solution2(arr2);
 const r3 = solution3(arr);
 console.log({ r2, r3 });
-
-//
