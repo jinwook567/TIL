@@ -68,15 +68,55 @@
 
 ## 외벽점검
 
-추가 필요
+(추가 필요)
 
 ## 조합 알고리즘 사용법
 
-추가 필요
+조합 알고리즘을 사용하는 기본 아이디어는 재귀를 활용하는 것이다. n개 중에 1개를 뽑고 n-1개 중에 k-1개를 뽑는 것이다.
+그리고 n-1개 중에 k-1개를 뽑은 값을 1개를 뽑은 값에 붙여준다. 이 형태를 재귀적으로 반복한다. 이 행위를 배열 내에서 반복문을 돌리면서 시행해주어야한다.
+반복문을 돌릴 때 주요한 점은, n-1개를 반복문의 index+1부터 넘겨줘야한다. (순열과 달리 이미 썻던 원소는 중복하면 안되기 때문에.)
+그리고 k값이 1이 되었을 때, 각 원소를 배열 형태로 리턴하며 재귀를 종료한다.
+
+[1,2,3]에서 2개를 뽑는 예시를 생각해보면 좋다.
+
+```
+function getCombination(arr, n) {
+  const result = [];
+  if (n === 1) return arr.map((v) => [v]);
+
+  arr.forEach((v, i) => {
+    const rest = arr.slice(i + 1);
+    const combination = getCombination(rest, n - 1);
+    const c = combination.map((c) => [v, ...c]);
+    result.push(...c);
+  });
+  return result;
+}
+```
 
 ## 순열 알고리즘 사용법
 
-추가 필요
+조합 알고리즘과 마찬가지로 재귀를 활용하면 된다. n개중에 1개를 뽑고, n-1개 중에 k-1개를 뽑는 것이다. 다만 다른 것은 n-1개를 넘겨줄 때 반복문의 본인의 index를 제외한 나머지 요소들을 전부 넘겨줘야 한다는 것이다. 순열의 경우 조합과 달리 순서가 있으므로.
+
+```
+function getPermutation(arr, n) {
+  const result = [];
+  if (n === 1) return arr.map((v) => [v]);
+
+  arr.forEach((v, i) => {
+    const rest = arr.filter((_, index) => index !== i);
+    const permutation = getPermutation(rest, n - 1);
+    const p = permutation.map((el) => [v, ...el]);
+    result.push(...p);
+  });
+  return result;
+}
+```
+
+### 중복 순열 알고리즘
+
+중복 순열의 경우 n-1개를 넘겨줄 때 그냥 본인 배열을 넘겨주면 된다. 중복해서 쓸 수 있으므로 사용한 것을 제외를 안시켜도 되기 때문이다.
+`const rest = [...arr]`
 
 # CS
 
