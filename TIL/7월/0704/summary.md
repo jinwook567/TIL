@@ -8,11 +8,59 @@
 
 ## 유클리드 호제법(최대공약수)
 
--
+- 나머지의 연산 분배법칙, 재귀를 이용해서 최대 공약수를 구하는 방법이다.
+  gcd(a,b) (단 a>b) 일 때 b가 0이라면, a를 리턴한다. 재귀는 gcd(b, r) (단 r은 a % b)
+
+사용 코드는 아래와 같다.
+
+```
+function gcd(a, b) {
+  [a, b] = [a > b ? a : b, a > b ? b : a];
+
+  if (b === 0) return a;
+
+  return gcd(b, a % b);
+}
+```
+
+최소 공배수를 구하는 방법은 최대 공약수를 구하고, (a\*b)/gcd(a,b) 이다.
+
+최소 공배수가 해당 공식을 갖는 이유. (두 수 a,b가 있다고 가정)
+a= AG, b= BG(G는 최대 공배수)로 나타낼 수 있음. 최소 공약수는(L)=A*B*G이다.
+L = a/G _ b/G _ G 이다. 즉 L = a\*b/G 라고 할 수 있다.
 
 ## Set과 Map 객체 비교
 
--
+- Set은 unique array(집합), (Hash)Map은 key, value 쌍이다.
+
+### Map 메소드 정리 및 특징
+
+map의 key는 자료형 제약이 없다. 객체의 경우에는 key를 문자열로 바꾸지만 map은 아니다.
+그리고 map은 체이닝이 가능하다. 또한 forEach도 사용할 수 있다.
+
+- new Map() (Map 생성)
+- map.has(key)
+- map.get(key)
+- map.set(key, value)
+- map.delete(key)
+- map.clear()
+- map.size
+- map.keys() -> key 들의 집합을 iterable 객체를 반환
+- map.values() -> value들의 집합을 iterable 객체를 반환
+- map.entries() -> key, value 쌍을 iterable 객체로 반환
+- map.forEach((key, value, map) => {})
+
+### Set 메소드 정리 및 특징
+
+반복이 없는 배열이라고 할 수 있다. forEach, for..of를 제공한다.
+
+- new Set()
+- set.add(value)
+- set.delete(value)
+- set.has(value)
+- set.clear()
+- set.size
+- set.forEach((value, valueAgain, set) => {})
 
 ## 나머지의 연산 분배법칙
 
