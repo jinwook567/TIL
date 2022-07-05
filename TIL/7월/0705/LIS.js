@@ -13,3 +13,13 @@ function LIS(numbers) {
 }
 
 console.log(LIS(numbers));
+
+function gcd(a, b) {
+  [a, b] = [a > b ? a : b, a > b ? b : a];
+
+  if (b === 0) return a;
+
+  return gcd(b, a % b);
+}
+console.log(gcd(12, 18));
+//12와 18의 최대 공약수는..
