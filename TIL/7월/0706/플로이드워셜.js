@@ -29,7 +29,6 @@ function floyd(n, graph) {
     }
   }
   console.log(distance);
-  //그냥 다른 곳으로 떠나고 싶다..
 }
 
 floyd(4, graph);
