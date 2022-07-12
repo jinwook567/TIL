@@ -1,7 +1,7 @@
 //같은 숫자에 넣을거면 1개를 더 넣어줘야한다.
 //아니라면 1개만 넣어주면 된다.
 
-console.log(11 ** 8);
+//permutation이 아니고 combination이다..
 function getScore(info, lion) {
   let appeachScore = 0;
   let lionScore = 0;
@@ -17,14 +17,14 @@ function getScore(info, lion) {
   return { appeachScore, lionScore };
 }
 
-function getPermutation(arr, n) {
+function getCombination(arr, n) {
   const result = [];
   if (n === 1) return arr.map((el) => [el]);
 
-  arr.forEach((v) => {
-    const rest = [...arr];
-    const permutation = getPermutation(rest, n - 1);
-    const attached = permutation.map((el) => [v, ...el]);
+  arr.forEach((v, i) => {
+    const rest = arr.slice(i);
+    const combination = getCombination(rest, n - 1);
+    const attached = combination.map((el) => [v, ...el]);
     result.push(...attached);
   });
   return result;
@@ -34,11 +34,10 @@ function solution(n, info) {
   let max = 0;
   let answer;
 
-  const numbers = [10, 9, 8, 7, 6, 5, 4, 3];
+  const numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-  const permutation = getPermutation(numbers, n);
+  const permutation = getCombination(numbers, n);
   permutation.forEach((arr) => {
-    console.log(arr);
     const lion = Array(11).fill(0);
     arr.forEach((v) => {
       //i는 10-i라고 했습니다.
