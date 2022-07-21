@@ -19,3 +19,25 @@
 ## 어느 상황에 Linked List를 쓰는게 Array보다 나을까요?
 
 ## 어느 상황에 Array를 쓰는게 linked list보다 더 나을까요? (ㅅ)
+
+## Queue 자료 구조란
+
+## Queue의 구현 방식 2가지 및 차이점
+
+## queue와 priority queue를 비교해서 설명.
+
+## Circular Queue란?
+
+## Stack 자료 구조란
+
+## heap 자료 구조란
+
+## heap의 push, pop 시간 복잡도
+
+## BST란 어떤 자료구조 입니까?
+
+## 이진 트리는 어떤 자료 구조 입니까?
+
+## 완전 이진 트리란?
+
+## 이진 트리의 worst case를 어떻게 대쳐할 수 있습니까?
