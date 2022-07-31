@@ -84,7 +84,7 @@ range[Symbol.iterator] = function(){
         last: this.to
 
         next(){
-            if(current <= last){
+            if(this.current <= this.last){
                 next({done: false, value: this.current++})
             } else {
                 next({done: true})
