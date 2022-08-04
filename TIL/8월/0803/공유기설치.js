@@ -1,17 +1,17 @@
-//구간의 차이가 target 이상인 숫자 n을 구하기.
+//몇개를 세울 수 있는지 확인하기.
 function count(arr, target) {
   let cnt = 1;
   let start = 0;
   let end = 1;
-
+  //왜 나는 토스에 합격했을까?
   while (end <= arr.length - 1) {
-    if (arr[end] - arr[start] < target) {
-      end++;
-    } else {
+    if (arr[end] - arr[start] >= target) {
       start = end;
       cnt++;
     }
+    end++;
   }
+
   return cnt;
 }
 
@@ -24,7 +24,6 @@ function solution(arr, n) {
 
   while (start <= end) {
     const mid = Math.floor((start + end) / 2);
-    console.log(count(arr, mid), mid);
     if (count(arr, mid) >= n) {
       start = mid + 1;
     } else {
