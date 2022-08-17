@@ -6,4 +6,6 @@
   - react hooks에 대해서 설명해주세요.
   - react에서 같은 상태 관리 로직이 반복되면 어떻게 처리하실건가요?
   - redux나 mobx 같은 global state를 다루는 도구는 왜 사용하는 건가요?
+  - virtual dom이 무엇인가요?
+  - 브라우저 렌더링 과정을 설명해주세요.
 - frontend 질답 전부 만들기. (80%)
