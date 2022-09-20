@@ -36,6 +36,7 @@ function solution(n, paths, gates, summits) {
   pathsByNode.forEach((arr) => arr.sort((a, b) => a[1] - b[1]));
 
   const d = {};
+  //무엇으로 시작했을 떄를 고려할 필요가 없는가?
   gates.forEach((v) => {
     d[v] = Array(n + 1).fill(Infinity);
     d[v][v] = 0;
@@ -79,7 +80,7 @@ function solution(n, paths, gates, summits) {
       });
     });
   }
-  console.log(d);
+
   return answer;
 }
 
